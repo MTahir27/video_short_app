@@ -1,2 +1,3 @@
 const String splashScreenRoute = '/';
-const String homeScreenRoute = '/home';
+const String onboardingScreenRoute = '/onBoarding-screen';
+const String homeScreenRoute = '/home-screen';
