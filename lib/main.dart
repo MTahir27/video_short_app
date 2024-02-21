@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:video_short/router/routing_constants.dart';
-import 'package:video_short/screens/page_not_found_screen.dart';
-import 'package:video_short/screens/splash_screen.dart';
+
+import './config/palette.dart';
+import './router/routing_constants.dart';
+import './screens/splash_screen.dart';
+import './screens/page_not_found_screen.dart';
 
 import 'router/router.dart' as router;
 
@@ -12,15 +14,41 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+          colorScheme: ColorScheme.fromSeed(seedColor: Pallete.primaryColor),
+          primarySwatch: Pallete.primaryColor,
+          useMaterial3: true,
+          fontFamily: 'Urbanist',
+          textTheme: const TextTheme(
+            headlineLarge: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
+            headlineMedium: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+            ),
+            headlineSmall: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+            bodyLarge: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.normal,
+            ),
+            bodyMedium: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.normal,
+            ),
+            bodySmall: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.normal,
+            ),
+          )),
       initialRoute: splashScreenRoute,
       home: const SplashScreen(),
       onGenerateRoute: router.generateRoute,
