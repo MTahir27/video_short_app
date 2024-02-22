@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../models/bottom_navigation_bar_modal.dart';
+import '../models/product_modal.dart';
 import '../models/onboarding_modal.dart';
+import '../models/bottom_navigation_bar_modal.dart';
 import '../screens/add_screen.dart';
-import '../screens/deals_screen.dart';
-import '../screens/discover_screen.dart';
 import '../screens/home_screen.dart';
+import '../screens/deals_screen.dart';
 import '../screens/profile_screen.dart';
+import '../screens/discover_screen.dart';
 
 // Onboarding Screen List
 final List<OnboardingModal> onBoardingDataList = [
@@ -62,5 +63,38 @@ final List<BottomNavigationBarModal> frontendScreenTabsList = [
     title: 'Profile',
     icon: Icons.person,
     page: const ProfileScreen(),
+  ),
+];
+
+final List<UserProfileModal> userProfileLists = [
+  UserProfileModal(
+    id: 1,
+    name: 'Electronics',
+    image: 'assets/images/avatars/avatar-1.png',
+  ),
+  UserProfileModal(
+    id: 2,
+    name: 'Appliances',
+    image: 'assets/images/avatars/avatar-2.png',
+  ),
+  UserProfileModal(
+    id: 3,
+    name: 'Mobiles',
+    image: 'assets/images/avatars/avatar-3.png',
+  ),
+  UserProfileModal(
+    id: 4,
+    name: 'I Phones',
+    image: 'assets/images/avatars/avatar-4.png',
+  ),
+  UserProfileModal(
+    id: 5,
+    name: 'Tablets',
+    image: 'assets/images/avatars/avatar-5.png',
+  ),
+  UserProfileModal(
+    id: 6,
+    name: 'Computer',
+    image: 'assets/images/avatars/avatar-6.png',
   ),
 ];

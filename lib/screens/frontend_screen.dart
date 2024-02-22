@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_short/helper/data.dart';
 
+import '../helper/data.dart';
 import '../widgets/layout/bottom_navigation_bar_widget.dart';
 
 class FrontendScreen extends StatefulWidget {

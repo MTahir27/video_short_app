@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:video_short/config/api.dart';
 
+import '../config/api.dart';
 import '../models/product_modal.dart';
 
 class ProductProvider with ChangeNotifier {

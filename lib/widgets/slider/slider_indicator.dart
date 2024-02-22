@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:video_short/config/palette.dart';
+
+import '../../config/palette.dart';
 
 class SliderIndecator extends StatelessWidget {
   const SliderIndecator({

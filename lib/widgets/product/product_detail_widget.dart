@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:video_short/helper/page_navigate.dart';
-import 'package:video_short/models/args/product_detail_screen_args.dart';
-import 'package:video_short/router/routing_constants.dart';
 
+import '../../helper/page_navigate.dart';
 import '../../config/palette.dart';
+import '../../router/routing_constants.dart';
 import '../../models/product_modal.dart';
+import '../../models/args/product_detail_screen_args.dart';
 import '../slider/slider_indicator.dart';
 import 'product_image_slider.dart';
 import 'product_info_widget.dart';

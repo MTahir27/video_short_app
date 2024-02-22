@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:video_short/provider/product_provider.dart';
 
 import './config/palette.dart';
 import './router/routing_constants.dart';
+import '../provider/product_provider.dart';
 import './screens/splash_screen.dart';
 import './screens/page_not_found_screen.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Test App',
         theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Pallete.primaryColor),
             primarySwatch: Pallete.primaryColor,

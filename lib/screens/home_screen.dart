@@ -6,6 +6,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import '../config/palette.dart';
 import '../helper/page_navigate.dart';
 import '../provider/product_provider.dart';
+import '../widgets/home/top_bar_widget.dart';
 import '../widgets/product/product_detail_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (kDebugMode) {
         print('Error in _getAllProductFunction => $error');
       }
-      showErrorMessage();
+      // showErrorMessage();
     } finally {
       setState(() {
         _isLoading = false;
@@ -73,26 +74,33 @@ class _HomeScreenState extends State<HomeScreen> {
         : Container(
             color: Pallete.primaryColor,
             height: MediaQuery.of(context).size.height,
-            child: CarouselSlider(
-              options: CarouselOptions(
-                height: MediaQuery.of(context).size.height,
-                viewportFraction: 1.0,
-                initialPage: 0,
-                enlargeCenterPage: true,
-                enableInfiniteScroll: false,
-                scrollDirection: Axis.vertical,
-              ),
-              carouselController: _controller,
-              items: Provider.of<ProductProvider>(context)
-                  .productList
-                  .map(
-                    (item) => Builder(
-                      builder: (BuildContext context) {
-                        return ProductDetailWidget(product: item);
-                      },
+            child: SafeArea(
+              child: Stack(
+                children: [
+                  CarouselSlider(
+                    options: CarouselOptions(
+                      height: MediaQuery.of(context).size.height,
+                      viewportFraction: 1.0,
+                      initialPage: 0,
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: false,
+                      scrollDirection: Axis.vertical,
                     ),
-                  )
-                  .toList(),
+                    carouselController: _controller,
+                    items: Provider.of<ProductProvider>(context)
+                        .productList
+                        .map(
+                          (item) => Builder(
+                            builder: (BuildContext context) {
+                              return ProductDetailWidget(product: item);
+                            },
+                          ),
+                        )
+                        .toList(),
+                  ),
+                  const TopBarWidget()
+                ],
+              ),
             ),
           );
   }

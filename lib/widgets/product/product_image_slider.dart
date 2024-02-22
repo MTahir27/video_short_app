@@ -1,6 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:video_short/config/palette.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
+import '../../config/palette.dart';
 
 class ProductImageSliderWidget extends StatefulWidget {
   const ProductImageSliderWidget({

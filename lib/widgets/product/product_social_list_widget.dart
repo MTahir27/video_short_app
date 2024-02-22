@@ -43,6 +43,8 @@ class ProductSocialListWidget extends StatelessWidget {
         ),
         SocialIconWidget(
           imgUrl: profileImage,
+          transparentBg: true,
+          isNetworkImage: true,
           isProfileImage: true,
         ),
       ],

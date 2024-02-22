@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:video_short/helper/data.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import '../config/palette.dart';
+import '../helper/data.dart';
 import '../helper/page_navigate.dart';
 import '../router/routing_constants.dart';
 import '../widgets/slider/slider_indicator.dart';

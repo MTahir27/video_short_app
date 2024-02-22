@@ -10,13 +10,20 @@ class SocialIconWidget extends StatelessWidget {
     this.border = false,
     this.isProfileImage = false,
     this.margin,
+    this.size = 40,
+    this.isNetworkImage = false,
+    this.transparentBg = false,
+    this.fontWeight = FontWeight.w600,
   });
   final String? name;
   final String imgUrl;
   final bool isProfileImage;
   final bool border;
   final EdgeInsetsGeometry? margin;
-  final double size = 40;
+  final double size;
+  final bool isNetworkImage;
+  final bool transparentBg;
+  final FontWeight fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +41,10 @@ class SocialIconWidget extends StatelessWidget {
             height: size,
             padding: !isProfileImage
                 ? const EdgeInsets.all(12)
-                : const EdgeInsets.all(1),
+                : const EdgeInsets.all(3),
             alignment: Alignment.center,
             decoration: BoxDecoration(
-              gradient: Pallete.primaryGradientColor,
+              gradient: !transparentBg ? Pallete.primaryGradientColor : null,
               shape: BoxShape.circle,
               border: border
                   ? Border.all(
@@ -46,25 +53,30 @@ class SocialIconWidget extends StatelessWidget {
                     )
                   : null,
             ),
-            child: isProfileImage
-                ? ClipRRect(
-                    borderRadius: BorderRadius.circular(size),
-                    child: Image.network(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(size),
+              child: isNetworkImage
+                  ? Image.network(
                       imgUrl,
-                      fit: BoxFit.cover,
-                      width: size,
-                      height: size,
+                      width: isProfileImage ? size : null,
+                      height: isProfileImage ? size : null,
+                      fit: isProfileImage ? BoxFit.cover : null,
+                    )
+                  : Image.asset(
+                      imgUrl,
+                      width: isProfileImage ? size : null,
+                      height: isProfileImage ? size : null,
+                      fit: isProfileImage ? BoxFit.cover : null,
                     ),
-                  )
-                : Image.asset(imgUrl),
+            ),
           ),
           if (name != null)
             Text(
               name!,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Pallete.whiteColor,
                 fontSize: 12,
-                fontWeight: FontWeight.w600,
+                fontWeight: fontWeight,
               ),
             )
         ],

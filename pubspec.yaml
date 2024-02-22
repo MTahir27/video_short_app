@@ -70,7 +70,16 @@ flutter:
     - assets/images/icons/chat-icon.png
     - assets/images/icons/offer-icon.png
     - assets/images/icons/share-icon.png
+    - assets/images/icons/plus_icon.png
+    - assets/images/icons/search-icon.png
     - assets/images/icons/notification-icon.png
+    # Avatars
+    - assets/images/avatars/avatar-1.png
+    - assets/images/avatars/avatar-2.png
+    - assets/images/avatars/avatar-3.png
+    - assets/images/avatars/avatar-4.png
+    - assets/images/avatars/avatar-5.png
+    - assets/images/avatars/avatar-6.png
 
     # - images/a_dot_ham.jpeg
 
