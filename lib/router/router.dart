@@ -3,7 +3,7 @@ import 'package:video_short/screens/page_not_found_screen.dart';
 
 import '../screens/onborading_screen.dart';
 import './routing_constants.dart';
-import '../screens/home_screen.dart';
+import '../screens/frontend_screen.dart';
 import '../screens/splash_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -13,9 +13,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (_) => const SplashScreen(),
       );
-    case homeScreenRoute:
+    case frontendScreenRoute:
       return MaterialPageRoute(
-        builder: (_) => const HomeScreen(),
+        builder: (_) => const FrontendScreen(),
       );
     case onboardingScreenRoute:
       return MaterialPageRoute(

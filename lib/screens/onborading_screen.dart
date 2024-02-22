@@ -1,14 +1,14 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:video_short/config/palette.dart';
-import 'package:video_short/helper/page_navigate.dart';
-import 'package:video_short/router/routing_constants.dart';
-import 'package:video_short/widgets/buttons/custom_elevated_button.dart';
-import 'package:video_short/widgets/buttons/gradien_elevated_button.dart';
+import 'package:video_short/helper/data.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
-import '../models/onboarding_modal.dart';
-import '../widgets/layout/bottom_navigation_bar_widget.dart';
+import '../config/palette.dart';
+import '../helper/page_navigate.dart';
+import '../router/routing_constants.dart';
 import '../widgets/slider/slider_indicator.dart';
+import '../widgets/buttons/custom_elevated_button.dart';
+import '../widgets/buttons/gradien_elevated_button.dart';
+import '../widgets/layout/bottom_navigation_bar_layout_widget.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -20,26 +20,13 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   int _current = 0;
   final CarouselController _controller = CarouselController();
-  static final List<OnboardingModal> _onBoardingDataList = [
-    OnboardingModal(
-      title: 'Discover Great Deals',
-      description:
-          "Have something to sell? Just snap, upload, and price your items. We've made theprocess simple and quick. Get your items in front of buyers in no time!",
-      image: 'assets/images/onboarding/slide-1.png',
-    ),
-    OnboardingModal(
-      title: 'Effortless Selling',
-      description:
-          "Have something to sell? Just snap, upload, and price your items. We've made the process simple and quick. Get your items in front of buyers in no time!",
-      image: 'assets/images/onboarding/slide-2.png',
-    ),
-    OnboardingModal(
-      title: 'Promote Your Business',
-      description:
-          "Our platform is a powerful tool for businesses as well! Advertise your products or services to a large and engaged audience,",
-      image: 'assets/images/onboarding/slide-3.png',
-    ),
-  ];
+
+  void handleGotoFrontendScreen() {
+    pushNamedAndRemoveUntilNavigate(
+      context: context,
+      pageName: frontendScreenRoute,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +47,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             },
           ),
           carouselController: _controller,
-          items: _onBoardingDataList
+          items: onBoardingDataList
               .map(
                 (item) => Builder(
                   builder: (BuildContext context) {
@@ -96,14 +83,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                       .textTheme
                                       .headlineLarge
                                       ?.copyWith(
-                                        color: Colors.white,
+                                        color: Pallete.whiteColor,
                                       ),
                                 ),
                               ),
                               Text(
                                 item.description,
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(color: Colors.white),
+                                style:
+                                    const TextStyle(color: Pallete.whiteColor),
                               ),
                             ],
                           ),
@@ -116,7 +104,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               .toList(),
         ),
       ),
-      bottomNavigationBar: BottomNavigatonBarWidget(
+      bottomNavigationBar: BottomNavigatonBarLayoutWidget(
         backgroundColor: Pallete.tertiaryColor,
         padding: const EdgeInsets.only(
           top: 24,
@@ -128,7 +116,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           children: [
             SliderIndecator(
               margin: const EdgeInsets.only(bottom: 40),
-              sliders: _onBoardingDataList,
+              sliders: onBoardingDataList,
               activeSliderNumber: _current,
               activeColor: Pallete.secondaryColor,
               inactiveColor: Pallete.grayColor,
@@ -137,12 +125,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: [
                 Expanded(
                   child: CustomElevatedButtonWidget(
-                    onPressed: () => pushNamedAndRemoveUntilNavigate(
-                      context: context,
-                      pageName: homeScreenRoute,
-                    ),
+                    onPressed: handleGotoFrontendScreen,
                     label: 'Skip',
-                    backgroundColor: Colors.white,
+                    backgroundColor: Pallete.whiteColor,
                     foregroundColor: Pallete.primaryColor,
                     borderRadius: 50,
                   ),
@@ -151,19 +136,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 Expanded(
                   child: GradientElevatedButtonWidget(
                     onPressed: () {
-                      if (_current < _onBoardingDataList.length - 1) {
+                      if (_current < onBoardingDataList.length - 1) {
                         _controller.nextPage(
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeIn,
                         );
                       } else {
-                        pushNamedAndRemoveUntilNavigate(
-                          context: context,
-                          pageName: homeScreenRoute,
-                        );
+                        handleGotoFrontendScreen();
                       }
                     },
-                    label: _current < _onBoardingDataList.length - 1
+                    label: _current < onBoardingDataList.length - 1
                         ? 'Next'
                         : 'Explore',
                     borderRadius: 50,

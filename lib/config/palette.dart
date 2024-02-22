@@ -21,6 +21,9 @@ class Pallete {
   static const secondaryColor = Color(0xFF3CFEDE);
   static const tertiaryColor = Color(0xFF0D2444);
   static const grayColor = Color(0xFF424242);
+  static const bottomBarIncativeColor = Color(0xFFA0ACBD);
+  static const whiteColor = Color(0xFFFFFFFF);
+  static const blackColor = Color(0xFF000000);
   static const primaryGradientColor = LinearGradient(
     colors: [Color(0xFF3CFEDE), Color(0xFF3263B0)],
     end: Alignment.centerLeft,

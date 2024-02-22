@@ -10,7 +10,7 @@ class CustomElevatedButtonWidget extends StatelessWidget {
     this.loading = false,
     this.borderRadius = 6,
     this.backgroundColor,
-    this.foregroundColor = Colors.white,
+    this.foregroundColor = Pallete.whiteColor,
   });
 
   final String label;
@@ -46,7 +46,7 @@ class CustomElevatedButtonWidget extends StatelessWidget {
                 height: 16,
                 width: 16,
                 child: CircularProgressIndicator(
-                  color: Colors.white,
+                  color: Pallete.whiteColor,
                   strokeWidth: 2,
                 ),
               )

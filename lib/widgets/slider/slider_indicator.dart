@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:video_short/config/palette.dart';
 
 class SliderIndecator extends StatelessWidget {
   const SliderIndecator({
     super.key,
     required this.sliders,
     required this.activeSliderNumber,
-    this.activeColor = Colors.white,
+    this.activeColor = Pallete.whiteColor,
     this.inactiveColor,
     this.size = 8,
     this.activeWidth = 8,
