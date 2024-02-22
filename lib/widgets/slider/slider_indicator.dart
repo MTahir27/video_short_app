@@ -33,28 +33,28 @@ class SliderIndecator extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: sliders.map(
-          (slide) {
-            return Container(
-              width: activeSliderNumber == sliders.indexOf(slide)
-                  ? activeWidth
-                  : size,
-              height: size,
-              margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(size / 2),
-                gradient: activeSliderNumber == sliders.indexOf(slide)
-                    ? activeGradientColor
-                    : null,
-                color: activeSliderNumber == sliders.indexOf(slide)
-                    ? activeGradientColor == null
-                        ? activeColor
-                        : null
-                    : inactiveColor ?? activeColor.withOpacity(0.5),
+        children: sliders
+            .map(
+              (slide) => Container(
+                width: activeSliderNumber == sliders.indexOf(slide)
+                    ? activeWidth
+                    : size,
+                height: size,
+                margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(size / 2),
+                  gradient: activeSliderNumber == sliders.indexOf(slide)
+                      ? activeGradientColor
+                      : null,
+                  color: activeSliderNumber == sliders.indexOf(slide)
+                      ? activeGradientColor == null
+                          ? activeColor
+                          : null
+                      : inactiveColor ?? activeColor.withOpacity(0.5),
+                ),
               ),
-            );
-          },
-        ).toList(),
+            )
+            .toList(),
       ),
     );
   }

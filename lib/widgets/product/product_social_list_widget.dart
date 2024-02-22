@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/home/social_icon_widget.dart';
+import 'social_icon_widget.dart';
 
 class ProductSocialListWidget extends StatelessWidget {
   const ProductSocialListWidget({

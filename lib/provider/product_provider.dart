@@ -18,10 +18,8 @@ class ProductProvider with ChangeNotifier {
         headers: {
           'Accept': 'application/json',
         },
-        // body: {},
       );
       final responseData = json.decode(response.body);
-      print('getAllProductApiFun responseData => $responseData');
       _productList.clear();
       if (responseData['status'] == true) {
         for (var data in (responseData['posts'] as List<dynamic>)) {
