@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../helper/data.dart';
 import '../../widgets/product/social_icon_widget.dart';
 
-class TopBarWidget extends StatelessWidget {
-  const TopBarWidget({super.key});
+class ProductStatusBarWidget extends StatelessWidget {
+  const ProductStatusBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

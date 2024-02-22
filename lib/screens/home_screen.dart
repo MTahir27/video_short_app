@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:video_short/widgets/home/product_status_bar_widget.dart';
 
 import '../config/palette.dart';
 import '../helper/page_navigate.dart';
 import '../provider/product_provider.dart';
-import '../widgets/home/top_bar_widget.dart';
 import '../widgets/product/product_detail_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -98,7 +98,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         )
                         .toList(),
                   ),
-                  const TopBarWidget()
+                  const SizedBox(
+                    height: 100,
+                    child: ProductStatusBarWidget(),
+                  )
                 ],
               ),
             ),
