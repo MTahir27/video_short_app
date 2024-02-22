@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BottomNavigationBarModal {
   final String title;
-  final Icon icon;
+  final IconData icon;
   final Widget page;
   final bool? isButton;
   final int index;

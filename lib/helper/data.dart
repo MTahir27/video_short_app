@@ -35,32 +35,32 @@ final List<BottomNavigationBarModal> frontendScreenTabsList = [
   BottomNavigationBarModal(
     index: 0,
     title: 'Home',
-    icon: const Icon(Icons.home),
+    icon: Icons.home,
     page: const HomeScreen(),
   ),
   BottomNavigationBarModal(
     index: 1,
     title: 'Discover',
-    icon: const Icon(Icons.search),
+    icon: Icons.search,
     page: const DiscoverScreen(),
   ),
   BottomNavigationBarModal(
     index: 2,
     title: 'Add',
-    icon: const Icon(Icons.add),
+    icon: Icons.add,
     page: const AddScreen(),
     isButton: true,
   ),
   BottomNavigationBarModal(
     index: 3,
     title: 'Deals',
-    icon: const Icon(Icons.south_america),
+    icon: Icons.luggage_sharp,
     page: const DealsScreen(),
   ),
   BottomNavigationBarModal(
     index: 4,
     title: 'Profile',
-    icon: const Icon(Icons.person),
+    icon: Icons.person,
     page: const ProfileScreen(),
   ),
 ];

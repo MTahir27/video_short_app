@@ -23,7 +23,7 @@ class GradientElevatedButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: fullWidth ? double.infinity : null,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -40,7 +40,6 @@ class GradientElevatedButtonWidget extends StatelessWidget {
         ),
         onPressed: !loading ? onPressed : null,
         child: Ink(
-          width: double.infinity,
           decoration: BoxDecoration(
             gradient: onPressed != null && !loading
                 ? backgroundColor ?? Pallete.primaryGradientColor

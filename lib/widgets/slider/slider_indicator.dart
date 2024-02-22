@@ -6,26 +6,32 @@ class SliderIndecator extends StatelessWidget {
     super.key,
     required this.sliders,
     required this.activeSliderNumber,
+    this.activeGradientColor,
     this.activeColor = Pallete.whiteColor,
     this.inactiveColor,
     this.size = 8,
     this.activeWidth = 8,
     this.margin,
+    this.alignment,
   });
 
   final List<dynamic> sliders;
   final int activeSliderNumber;
   final Color activeColor;
+  final Gradient? activeGradientColor;
   final Color? inactiveColor;
   final double size;
   final double activeWidth;
   final EdgeInsets? margin;
+  final Alignment? alignment;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: alignment,
       margin: margin,
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: sliders.map(
           (slide) {
@@ -37,8 +43,13 @@ class SliderIndecator extends StatelessWidget {
               margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(size / 2),
+                gradient: activeSliderNumber == sliders.indexOf(slide)
+                    ? activeGradientColor
+                    : null,
                 color: activeSliderNumber == sliders.indexOf(slide)
-                    ? activeColor
+                    ? activeGradientColor == null
+                        ? activeColor
+                        : null
                     : inactiveColor ?? activeColor.withOpacity(0.5),
               ),
             );

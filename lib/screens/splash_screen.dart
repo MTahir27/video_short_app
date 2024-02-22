@@ -13,10 +13,10 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 0), () {
       pushNamedAndRemoveUntilNavigate(
         context: context,
-        pageName: onboardingScreenRoute,
+        pageName: frontendScreenRoute,
       );
     });
     super.initState();

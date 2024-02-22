@@ -40,8 +40,10 @@ class BottomNavigationBarWidget extends StatelessWidget {
                     icon: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        data.icon,
-                        const SizedBox(height: 4),
+                        Icon(
+                          data.icon,
+                          size: 24,
+                        ),
                         Text(
                           data.title,
                           style: TextStyle(
@@ -70,7 +72,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Icon(
-                        data.icon.icon,
+                        data.icon,
                         color: Pallete.primaryColor,
                       ),
                     ),

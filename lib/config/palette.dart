@@ -24,8 +24,14 @@ class Pallete {
   static const bottomBarIncativeColor = Color(0xFFA0ACBD);
   static const whiteColor = Color(0xFFFFFFFF);
   static const blackColor = Color(0xFF000000);
+  static const orangeColor = Color(0xFFF6A826);
   static const primaryGradientColor = LinearGradient(
     colors: [Color(0xFF3CFEDE), Color(0xFF3263B0)],
+    end: Alignment.centerLeft,
+    begin: Alignment.centerRight,
+  );
+  static const orangeGradientColor = LinearGradient(
+    colors: [Color(0xFFF9B527), Color(0xFFF7631D)],
     end: Alignment.centerLeft,
     begin: Alignment.centerRight,
   );
