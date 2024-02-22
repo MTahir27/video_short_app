@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:video_short/widgets/video_player_widget.dart';
 
 import '../../config/palette.dart';
+import '../../widgets/video_player_widget.dart';
 
 class ProductImageSliderWidget extends StatefulWidget {
   const ProductImageSliderWidget({

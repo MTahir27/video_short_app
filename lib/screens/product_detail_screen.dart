@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:video_short/widgets/loader_widget.dart';
 
 import '../config/palette.dart';
 import '../models/product_modal.dart';
+import '../widgets/loader_widget.dart';
 import '../widgets/product/product_detail_widget.dart';
 import '../models/args/product_detail_screen_args.dart';
 

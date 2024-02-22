@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:video_short/widgets/loader_widget.dart';
 
 import '../config/palette.dart';
 import '../helper/page_navigate.dart';
 import '../provider/product_provider.dart';
+import '../widgets/loader_widget.dart';
 import '../widgets/product/product_detail_widget.dart';
 import '../widgets/home/product_status_bar_widget.dart';
 
@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
       if (kDebugMode) {
         print('Error in _getAllProductFunction => $error');
       }
-      // showErrorMessage();
+      showErrorMessage(message: error.toString());
     } finally {
       setState(() {
         _isLoading = false;
@@ -47,12 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  void showErrorMessage() {
+  void showErrorMessage({required String message}) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Error in fetching data!'),
-        content: const Text('Error in fetching data! Please try again later.'),
+        content: Text(message),
+        // const Text('Error in fetching data! Please try again later.'),
         actions: [
           TextButton(
             onPressed: () async {
