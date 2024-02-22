@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:video_short/config/palette.dart';
+
+import '../widgets/loader_widget.dart';
 
 class VideoPlayerWidget extends StatefulWidget {
   const VideoPlayerWidget({super.key, required this.videoUrl});
@@ -16,12 +17,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   void initState() {
     Future.delayed(Duration.zero, () {
-      print('widget.videoUrl => ${widget.videoUrl}');
       _controller = VideoPlayerController.networkUrl(
-        Uri.parse(
-          widget.videoUrl,
-          // 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-        ),
+        Uri.parse(widget.videoUrl),
       )..initialize().then((_) {
           setState(() {
             _isVideoReady = true;
@@ -50,10 +47,6 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
               _controller!,
             ),
           )
-        : const Center(
-            child: CircularProgressIndicator(
-              color: Pallete.whiteColor,
-            ),
-          );
+        : const LoaderWidget();
   }
 }

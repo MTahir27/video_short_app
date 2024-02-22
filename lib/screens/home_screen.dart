@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:video_short/widgets/loader_widget.dart';
 
 import '../config/palette.dart';
 import '../helper/page_navigate.dart';
@@ -68,8 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return _isLoading
-        ? const Center(
-            child: CircularProgressIndicator(),
+        ? const LoaderWidget(
+            color: Pallete.primaryColor,
           )
         : Container(
             color: Pallete.primaryColor,

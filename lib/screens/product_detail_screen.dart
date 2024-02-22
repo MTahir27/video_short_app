@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_short/widgets/loader_widget.dart';
 
 import '../config/palette.dart';
 import '../models/product_modal.dart';
@@ -46,9 +47,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               product: productData!,
               isProductDetailScreen: true,
             )
-          : const Center(
-              child: CircularProgressIndicator(),
-            ),
+          : const LoaderWidget(color: Pallete.primaryColor),
     );
   }
 }
