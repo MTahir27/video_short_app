@@ -77,7 +77,7 @@ class _ProductDetailWidgetState extends State<ProductDetailWidget> {
                   margin: const EdgeInsets.only(top: 24),
                   sliders: [...widget.product.images, ''],
                   activeSliderNumber: _current,
-                  activeWidth: 24,
+                  activeWidth: 16,
                   activeGradientColor: Pallete.orangeGradientColor,
                   activeColor: Pallete.orangeColor,
                   inactiveColor: Pallete.whiteColor,

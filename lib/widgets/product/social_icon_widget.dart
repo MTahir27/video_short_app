@@ -14,6 +14,7 @@ class SocialIconWidget extends StatelessWidget {
     this.isNetworkImage = false,
     this.transparentBg = false,
     this.fontWeight = FontWeight.w600,
+    this.onClick,
   });
   final String? name;
   final String imgUrl;
@@ -24,6 +25,7 @@ class SocialIconWidget extends StatelessWidget {
   final bool isNetworkImage;
   final bool transparentBg;
   final FontWeight fontWeight;
+  final Function()? onClick;
 
   @override
   Widget build(BuildContext context) {
@@ -31,43 +33,46 @@ class SocialIconWidget extends StatelessWidget {
       margin: margin,
       child: Column(
         children: [
-          Container(
-            margin: const EdgeInsets.only(bottom: 4),
-            constraints: const BoxConstraints(
-              minWidth: 40,
-              minHeight: 40,
-            ),
-            width: size,
-            height: size,
-            padding: !isProfileImage
-                ? const EdgeInsets.all(12)
-                : const EdgeInsets.all(3),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              gradient: !transparentBg ? Pallete.primaryGradientColor : null,
-              shape: BoxShape.circle,
-              border: border
-                  ? Border.all(
-                      color: Pallete.secondaryColor,
-                      width: 1,
-                    )
-                  : null,
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(size),
-              child: isNetworkImage
-                  ? Image.network(
-                      imgUrl,
-                      width: isProfileImage ? size : null,
-                      height: isProfileImage ? size : null,
-                      fit: isProfileImage ? BoxFit.cover : null,
-                    )
-                  : Image.asset(
-                      imgUrl,
-                      width: isProfileImage ? size : null,
-                      height: isProfileImage ? size : null,
-                      fit: isProfileImage ? BoxFit.cover : null,
-                    ),
+          GestureDetector(
+            onTap: onClick,
+            child: Container(
+              margin: const EdgeInsets.only(bottom: 4),
+              constraints: const BoxConstraints(
+                minWidth: 40,
+                minHeight: 40,
+              ),
+              width: size,
+              height: size,
+              padding: !isProfileImage
+                  ? const EdgeInsets.all(12)
+                  : const EdgeInsets.all(3),
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                gradient: !transparentBg ? Pallete.primaryGradientColor : null,
+                shape: BoxShape.circle,
+                border: border
+                    ? Border.all(
+                        color: Pallete.secondaryColor,
+                        width: 1,
+                      )
+                    : null,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(size),
+                child: isNetworkImage
+                    ? Image.network(
+                        imgUrl,
+                        width: isProfileImage ? size : null,
+                        height: isProfileImage ? size : null,
+                        fit: isProfileImage ? BoxFit.cover : null,
+                      )
+                    : Image.asset(
+                        imgUrl,
+                        width: isProfileImage ? size : null,
+                        height: isProfileImage ? size : null,
+                        fit: isProfileImage ? BoxFit.cover : null,
+                      ),
+              ),
             ),
           ),
           if (name != null)
