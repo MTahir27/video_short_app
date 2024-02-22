@@ -49,6 +49,7 @@ class _ProductImageSliderWidgetState extends State<ProductImageSliderWidget> {
                     width: double.infinity,
                     height: double.infinity,
                     child: Image.network(
+                      // item,
                       'https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
                       fit: BoxFit.cover,
                     ),
